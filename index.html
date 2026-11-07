@@ -50,6 +50,12 @@ button,input,select{font:inherit;color:inherit}
 .nav a{text-decoration:none;color:var(--muted);padding:6px 12px;border-radius:8px;white-space:nowrap;font-weight:500}
 .nav a[aria-current="page"]{background:var(--accent-soft);color:var(--accent)}
 .sync{display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--muted);flex-wrap:wrap}
+@media (max-width:640px){
+  .bar-in{gap:8px}
+  .nav{order:3;flex-basis:100%;gap:2px;-webkit-overflow-scrolling:touch}
+  .nav a{padding:6px 10px}
+  .sync{order:2;margin-inline-start:auto}
+  .brand{order:1}}
 
 main{max-width:1080px;margin:0 auto;padding:20px 16px 90px;display:grid;gap:20px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:12px;min-width:0}
