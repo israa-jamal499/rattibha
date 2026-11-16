@@ -652,22 +652,21 @@ function viewTasks(){
   <section class="card"><h2>القائمة (${items.length})</h2><div class="list">${items.sort((a,b)=>(a.status==='done')-(b.status==='done')||(a.due-b.due)).map(i=>
     itemRow(i,{extra:`<button class="btn sm ghost" data-task-del="${esc(i.task.id)}">حذف</button>`})).join('')||'<div class="empty">ما في مهام.</div>'}</div></section>`;
 }
-function viewAccount(){
-  const rem=remembered(),log=store.get(K('sessions'),[]);
-  return `<div class="head"><h1>حسابي والأمان</h1></div>
-  <section class="card"><h2>${esc(S.me.name)}</h2><div class="muted small">مسجّلة دخول على مودل الكلية</div>
-    <div class="chips"><button class="btn" data-act="logout">خروج</button><button class="btn primary" data-act="logout-wipe">خروج ومسح كل بياناتي من الجهاز</button></div></section>
-  <section class="card"><h2>وين بتنحفظ بياناتك</h2>
-    <p style="margin:0">رتّبها ما إله سيرفر. كل شي بيصير بمتصفحك انتِ:</p>
-    <div class="list">
-      <div class="row"><span class="bar4" style="background:var(--ok)"></span><div><b>كلمة السر</b><div class="m">بتروح مباشرة لمودل الكلية، وما بتنحفظ ولا لحظة.</div></div><span class="st ok">آمن</span></div>
-      <div class="row"><span class="bar4" style="background:var(--accent)"></span><div><b>توكن الدخول</b><div class="m">${rem?'محفوظ على هالجهاز لأنك اخترتي "خليني مسجّلة".':'بالذاكرة المؤقتة، بينمسح لما تسكّري المتصفح.'}</div></div><span class="st mute">${rem?'على الجهاز':'مؤقّت'}</span></div>
-      <div class="row"><span class="bar4" style="background:var(--new)"></span><div><b>مهامك وجدولك وإعداداتك</b><div class="m">محفوظة بمتصفح هالجهاز بس، ما بتوصل لحدا.</div></div><span class="st mute">على الجهاز</span></div>
-    </div></section>
-  <section class="card"><h2>تحكّمي بالوصول</h2>
-    <div class="warnbox">لو استخدمتي الموقع على جهاز مش إلك، أو بدك تقطعي الوصول نهائياً: ادخلي المودل ← <b>التفضيلات (Preferences)</b> ← <b>مفاتيح الأمان (Security keys)</b>، واضغطي <b>إعادة تعيين</b> جنب خدمة Moodle mobile. هيك أي توكن قديم بيبطل يشتغل فوراً.</div></section>
-  ${log.length?`<section class="card"><h2>آخر دخول من هالجهاز</h2><div class="list">${log.slice().reverse().slice(0,5).map(s=>`<div class="row"><span class="bar4" style="background:var(--muted)"></span><div><b class="num">${esc(s.when)}</b><div class="m">${esc(s.ua)}</div></div></div>`).join('')}</div></section>`:''}`;
-}
+// function viewAccount(){
+//   const rem=remembered(),log=store.get(K('sessions'),[]);
+//   return `<div class="head"><h1>حسابي والأمان</h1></div>
+//   <section class="card"><h2>${esc(S.me.name)}</h2><div class="muted small">مسجّلة دخول على مودل الكلية</div>
+//     <div class="chips"><button class="btn" data-act="logout">خروج</button><button class="btn primary" data-act="logout-wipe">خروج ومسح كل بياناتي من الجهاز</button></div></section>
+//   <section class="card">
+//     <div class="list">
+//       <div class="row"><span class="bar4" style="background:var(--ok)"></span><div><b>كلمة السر</b><div class="m">بتروح مباشرة لمودل الكلية، وما بتنحفظ ولا لحظة.</div></div><span class="st ok">آمن</span></div>
+//       <div class="row"><span class="bar4" style="background:var(--accent)"></span><div><b>توكن الدخول</b><div class="m">${rem?'محفوظ على هالجهاز لأنك اخترتي "خليني مسجّلة".':'بالذاكرة المؤقتة، بينمسح لما تسكّري المتصفح.'}</div></div><span class="st mute">${rem?'على الجهاز':'مؤقّت'}</span></div>
+//       <div class="row"><span class="bar4" style="background:var(--new)"></span><div><b>مهامك وجدولك وإعداداتك</b><div class="m">محفوظة بمتصفح هالجهاز بس، ما بتوصل لحدا.</div></div><span class="st mute">على الجهاز</span></div>
+//     </div></section>
+//   <section class="card">
+//     <div class="warnbox">لو استخدمتي الموقع على جهاز مش إلك، أو بدك تقطعي الوصول نهائياً: ادخلي المودل ← <b>التفضيلات (Preferences)</b> ← <b>مفاتيح الأمان (Security keys)</b>، واضغطي <b>إعادة تعيين</b> جنب خدمة Moodle mobile. هيك أي توكن قديم بيبطل يشتغل فوراً.</div></section>
+//   ${log.length?`<section class="card"><h2>آخر دخول من هالجهاز</h2><div class="list">${log.slice().reverse().slice(0,5).map(s=>`<div class="row"><span class="bar4" style="background:var(--muted)"></span><div><b class="num">${esc(s.when)}</b><div class="m">${esc(s.ua)}</div></div></div>`).join('')}</div></section>`:''}`;
+// }
 function viewLogout(){return viewAccount()}
 function viewLogin(err){
   return `<main><form class="card login" id="loginForm"><span class="brand">رتّبها</span>
