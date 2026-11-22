@@ -1456,10 +1456,10 @@
         return `<div class="head"><h1>حسابي والأمان</h1></div>
   <section class="card"><h2>${esc(S.me.name)}</h2><div class="muted small">مسجّلة دخول على مودل الكلية</div>
     <div class="chips"><button class="btn" data-act="logout">خروج</button><button class="btn primary" data-act="logout-wipe">خروج ومسح كل بياناتي من الجهاز</button></div></section>
-  <section class="card"><h2>وين بتنحفظ بياناتك</h2>
-    <p style="margin:0">رتّبها ما إله سيرفر. كل شي بيصير بمتصفحك انتِ:</p>
+  <section class="card"><h2></h2>
+    <p style="margin:0"></p>
     <div class="list">
-      <div class="row"><span class="bar4" style="background:var(--ok)"></span><div><b>كلمة السر</b><div class="m">بتروح مباشرة لمودل الكلية، وما بتنحفظ ولا لحظة.</div></div><span class="st ok">آمن</span></div>
+      <div class="row"><span class="bar4" style="background:var(--ok)"></span><div><b>كلمة السر</b><div class="m"></div></div><span class="st ok"></span></div>
       <div class="row"><span class="bar4" style="background:var(--accent)"></span><div><b>توكن الدخول</b><div class="m">${rem ? 'محفوظ على هالجهاز لأنك اخترتي "خليني مسجّلة".' : 'بالذاكرة المؤقتة، بينمسح لما تسكّري المتصفح.'}</div></div><span class="st mute">${rem ? 'على الجهاز' : 'مؤقّت'}</span></div>
       <div class="row"><span class="bar4" style="background:var(--new)"></span><div><b>مهامك وجدولك وإعداداتك</b><div class="m">محفوظة بمتصفح هالجهاز بس، ما بتوصل لحدا.</div></div><span class="st mute">على الجهاز</span></div>
     </div></section>
@@ -1475,7 +1475,7 @@
     <label>كلمة السر<input id="lp" type="password" autocomplete="current-password" required dir="ltr"></label>
     <label style="display:flex;gap:8px;align-items:center;color:var(--ink)"><input type="checkbox" id="lr" style="width:auto"> خليني مسجّلة على هالجهاز</label>
     <button class="btn primary" id="lb">دخول</button><div class="err">${esc(err || '')}</div>
-    <p class="muted small" style="margin:0">كلمة السر بتنبعث مباشرة لـ moodle.ucas.edu.ps وما بتنحفظ. ما تختاري "خليني مسجّلة" على جهاز مش إلك.</p></form></main>`;
+   </form></main>`;
       }
 
       /* ================= render & events ================= */
