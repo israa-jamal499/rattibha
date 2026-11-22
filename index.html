@@ -920,7 +920,7 @@
 <body>
   <div id="root"></div>
   <div id="dock"></div>
-  <footer>المهندسة :اسراء جمال كسكين
+  <footer>رتّبها — مشروع طلابي من إعداد وتطوير المهندسة إسراء جمال كسكين.
   </footer>
 
   <script>
@@ -1456,13 +1456,9 @@
         return `<div class="head"><h1>حسابي والأمان</h1></div>
   <section class="card"><h2>${esc(S.me.name)}</h2><div class="muted small">مسجّلة دخول على مودل الكلية</div>
     <div class="chips"><button class="btn" data-act="logout">خروج</button><button class="btn primary" data-act="logout-wipe">خروج ومسح كل بياناتي من الجهاز</button></div></section>
-  <section class="card"><h2></h2>
-    <p style="margin:0"></p>
-    <div class="list">
-      <div class="row"><span class="bar4" style="background:var(--ok)"></span><div><b>كلمة السر</b><div class="m"></div></div><span class="st ok"></span></div>
-      <div class="row"><span class="bar4" style="background:var(--accent)"></span><div><b>توكن الدخول</b><div class="m">${rem ? 'محفوظ على هالجهاز لأنك اخترتي "خليني مسجّلة".' : 'بالذاكرة المؤقتة، بينمسح لما تسكّري المتصفح.'}</div></div><span class="st mute">${rem ? 'على الجهاز' : 'مؤقّت'}</span></div>
-      <div class="row"><span class="bar4" style="background:var(--new)"></span><div><b>مهامك وجدولك وإعداداتك</b><div class="m">محفوظة بمتصفح هالجهاز بس، ما بتوصل لحدا.</div></div><span class="st mute">على الجهاز</span></div>
-    </div></section>
+  <section class="card"><h2>عن التطبيق</h2>
+    <p style="margin:0">رتّبها — تطبيق لتنظيم الدراسة لطلاب الكلية الجامعية للعلوم التطبيقية.</p>
+    <div class="muted small">إعداد وتطوير: المهندسة إسراء جمال كسكين</div></section>
   <section class="card"><h2>تحكّمي بالوصول</h2>
     <div class="warnbox">لو استخدمتي الموقع على جهاز مش إلك، أو بدك تقطعي الوصول نهائياً: ادخلي المودل ← <b>التفضيلات (Preferences)</b> ← <b>مفاتيح الأمان (Security keys)</b>، واضغطي <b>إعادة تعيين</b> جنب خدمة Moodle mobile. هيك أي توكن قديم بيبطل يشتغل فوراً.</div></section>
   ${log.length ? `<section class="card"><h2>آخر دخول من هالجهاز</h2><div class="list">${log.slice().reverse().slice(0, 5).map(s => `<div class="row"><span class="bar4" style="background:var(--muted)"></span><div><b class="num">${esc(s.when)}</b><div class="m">${esc(s.ua)}</div></div></div>`).join('')}</div></section>` : ''}`;
@@ -1475,7 +1471,7 @@
     <label>كلمة السر<input id="lp" type="password" autocomplete="current-password" required dir="ltr"></label>
     <label style="display:flex;gap:8px;align-items:center;color:var(--ink)"><input type="checkbox" id="lr" style="width:auto"> خليني مسجّلة على هالجهاز</label>
     <button class="btn primary" id="lb">دخول</button><div class="err">${esc(err || '')}</div>
-   </form></main>`;
+    <p class="muted small" style="margin:0">كلمة السر بتنبعث مباشرة لـ moodle.ucas.edu.ps وما بتنحفظ. ما تختاري "خليني مسجّلة" على جهاز مش إلك.</p></form></main>`;
       }
 
       /* ================= render & events ================= */

@@ -5,7 +5,7 @@
      والبيانات القديمة أصلاً محفوظة بالتطبيق نفسه (localStorage).
    - خطوط جوجل بنكاشها عشان الشكل يضل حلو أوفلاين.
 */
-const CACHE = 'rattibha-v1';
+const CACHE = 'rattibha-v2';
 const SHELL = [
   './',
   './index.html',
