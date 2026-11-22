@@ -1458,7 +1458,7 @@
     <div class="chips"><button class="btn" data-act="logout">خروج</button><button class="btn primary" data-act="logout-wipe">خروج ومسح كل بياناتي من الجهاز</button></div></section>
   <section class="card"><h2>عن التطبيق</h2>
     <p style="margin:0">رتّبها — تطبيق لتنظيم الدراسة لطلاب الكلية الجامعية للعلوم التطبيقية.</p>
-    <div class="muted small">إعداد وتطوير: المهندسة إسراء جمال كسكين</div></section>
+    <div class="muted small">إ</div></section>
   <section class="card"><h2>تحكّمي بالوصول</h2>
     <div class="warnbox">لو استخدمتي الموقع على جهاز مش إلك، أو بدك تقطعي الوصول نهائياً: ادخلي المودل ← <b>التفضيلات (Preferences)</b> ← <b>مفاتيح الأمان (Security keys)</b>، واضغطي <b>إعادة تعيين</b> جنب خدمة Moodle mobile. هيك أي توكن قديم بيبطل يشتغل فوراً.</div></section>
   ${log.length ? `<section class="card"><h2>آخر دخول من هالجهاز</h2><div class="list">${log.slice().reverse().slice(0, 5).map(s => `<div class="row"><span class="bar4" style="background:var(--muted)"></span><div><b class="num">${esc(s.when)}</b><div class="m">${esc(s.ua)}</div></div></div>`).join('')}</div></section>` : ''}`;
